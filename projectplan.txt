@@ -1,0 +1,37 @@
+Gaslite is a first deliverable effort to extend a very limited number of firewall managment functions
+into a self serve portal. The specific goal of V1 is to allow the additiona dn removal of IPSEC site to site tunnels.
+
+Web front end:
+HTTPS
+very-basic user authentication - v2 will intergrate this into LDAP
+once logged in a user should see firewalls they can manage and the existing tunnels
+user should be able to add a new tunnel or remove an existing one.
+
+backend:
+populate the firewall data with a call to the managed firewalls at user login
+call to firewall to execute changes
+call to firewall to save changes
+
+backend connectivity SHH or REST
+
+V1 supported firewalls will be Vyatta 5400 only
+
+prject plan phase 1:
+create target vyatta test platform
+#intall ruby on rails dev enviroment
+on reflection rails is has too much overhead both technical and human for this project moving code base to FLASK to leverage existing Python Expertise.
+
+phase 2:
+create ruby code to poll firewall config
+create ruby code to make a change to firewall config
+
+phase 3:
+basic front end, create https host and process that calls phase 2 code
+
+phase 4:
+add basic user authentication
+
+phase 5:
+clean up and make UX relativly painless
+~
+
